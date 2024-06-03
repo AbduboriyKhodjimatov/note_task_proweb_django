@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Главная страница
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h1 class="my-4">Список задач</h1>
+    {% for task in tasks %}
+    <div class="alert alert-primary">
+        <span style="color:rgb(0, 5, 9)"> <b> <h3>{{ task.title }}</h3> </b></span>
+        <span style="color:rgb(0, 5, 9)"> <p>{{ task.description }}</p> </span>
+        <a href="{% url 'task-detail' task.id %}" class="btn btn-info mt-2">Подробнее</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}

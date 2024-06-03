@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Удалить статью: {{task_detail.title}}
+{% endblock %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    <p> Вы действительно хотите удалить статью с названием: <b> {{task_detail.title}} </b></p>
+    <input type="submit" class="btn btn-dark" value="Да, удалить">
+    <a href="{{task_detail.get_absolute_url}}" class="btn btn-info">К заданию</a>
+</form>
+{% endblock %}
